@@ -1,0 +1,8 @@
+{ "timestamp": "2018-05-24 22:19:41", "id": 0, "class": "audit", "event": "startup"}
+Log not in json format
+{ "timestamp": "2018-05-24 22:19:45", "id": 0, "class": "connection", "event": "connect"}
+{ "timestamp": "2018-05-24 22:19:45", "id": 1, "class": "connection", "event": "disconnect"}
+{ "timestamp": "2018-05-24 22:19:47", "id": 0, "class": "connection", "event": "connect"}
+{ "timestamp": "2018-05-24 22:19:47", "id": 1, "class": "general", "event": "status"}
+{ "timestamp": "2018-05-24 22:19:47", "id": 2, "class": "connection", "event": "disconnect"}
+{ "timestamp": "2018-05-24 22:19:53", "id": 0, "class": "audit", "event": "shutdown"}
