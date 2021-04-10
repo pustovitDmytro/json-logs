@@ -18,10 +18,6 @@ script:
   echo ">>> Run sample integration test"
   yarn && yarn compile && yarn test
 cache: yarn
-before_script:
-  - "npm run build"
-after_success:
-  - "npm run coveralls"
 jobs:
   include:
     - stage: test
