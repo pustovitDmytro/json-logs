@@ -33,6 +33,7 @@
 	},
 	"homepage": "https://github.com/pustovitDmytro/json-logs#readme",
 	"scripts": {
+		"prepare": "husky install",
 		"vscode:prepublish": "npm run package",
 		"compile": "webpack",
 		"watch": "webpack --watch",
