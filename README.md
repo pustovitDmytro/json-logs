@@ -3,6 +3,14 @@
 This extention will help you to prettify and manage json logs
 
 
+## Table of Contents
+  - [Usage](#usage)
+  - [Contribute](#contribute)
+
+## Usage
+
+![Usage Sample](.docs/sample-prettify.gif)
+
 ## Contribute
 
 Make the changes to the code and tests and then commit to your branch. Be sure to follow the commit message conventions.
