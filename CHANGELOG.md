@@ -1,3 +1,15 @@
+## [1.0.2](https://github.com/pustovitDmytro/json-logs/compare/v1.0.1...v1.0.2) (2021-04-10)
+
+
+### Chore
+
+* setup commitlint ([b5c67a1](https://github.com/pustovitDmytro/json-logs/commit/b5c67a1fddcc7424ba344b36e9db829f5c9dea6a))
+* store build only in release assets ([6e66ee8](https://github.com/pustovitDmytro/json-logs/commit/6e66ee80d376af87874116d5bedfca9bece8a796))
+
+### Docs
+
+* scale example gif ([607293b](https://github.com/pustovitDmytro/json-logs/commit/607293b369568603b8c4c927add21bc3af929e4c))
+
 ## [1.0.1](https://github.com/pustovitDmytro/json-logs/compare/v1.0.0...v1.0.1) (2021-04-10)
 
 
