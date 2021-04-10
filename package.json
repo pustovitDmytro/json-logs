@@ -3,7 +3,7 @@
 	"displayName": "JSON Logs",
 	"description": "Manage json logs",
 	"version": "1.0.2",
-	"publisher": "vscodepublisher",
+	"publisher": "dmytro-pustovit",
 	"engines": {
 		"vscode": "^1.55.0"
 	},
