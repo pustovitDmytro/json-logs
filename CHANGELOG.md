@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/pustovitDmytro/json-logs/compare/v1.0.2...v1.1.0) (2021-04-10)
+
+
+### Update
+
+* change publisher ([90d5af3](https://github.com/pustovitDmytro/json-logs/commit/90d5af39186dfa0d1282b8798db82102c0313fc5))
+
 ## [1.0.2](https://github.com/pustovitDmytro/json-logs/compare/v1.0.1...v1.0.2) (2021-04-10)
 
 
