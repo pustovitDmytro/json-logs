@@ -1,7 +1,7 @@
 defaults: &defaults
   resource_class: small
   docker:
-    - image: circleci/node:14
+    - image: circleci/node:14-browsers
 cache-defaults: &cache-defaults
   keys:
     - -{{ checksum "package-lock.json" }}
@@ -20,8 +20,8 @@ aliases:
   - &setup-vscode
     name: Setup Vscode
     command: |
-            export DISPLAY=':99.0'
-            /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+            echo "export DISPLAY=':99.0'" >> $BASH_ENV
+            source $BASH_ENV
   - &danger-pr
     name: Run danger
     command: npx danger ci -d .dangerfile.js
