@@ -1,6 +1,6 @@
 {
     "root": true,
-    "extends": "webbylab",
+    "extends": "incredible",
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 6,
@@ -16,12 +16,7 @@
         "eqeqeq": "warn",
         "no-throw-literal": "warn",
         "semi": "off",
-        "func-names": 0,
-        "func-style": 0,
-        "prefer-arrow-callback": 0,
-        "import/no-unresolved": 0,
-        "no-magic-numbers": 0,
-        "import/no-commonjs": 0
+        "import/no-unresolved": 0
     },
     "ignorePatterns": [
         "**/*.d.ts"

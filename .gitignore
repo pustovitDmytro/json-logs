@@ -4,3 +4,8 @@ node_modules
 .vscode-test/
 *.vsix
 coverage/*
+tmp/*
+logs/*
+*.log
+reports/*
+.coveralls.yml
