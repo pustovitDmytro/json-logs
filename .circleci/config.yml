@@ -21,7 +21,7 @@ aliases:
     name: Setup Vscode
     command: |
             export DISPLAY=':99.0'
-    /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+            /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   - &danger-pr
     name: Run danger
     command: npx danger ci -d .dangerfile.js
@@ -139,7 +139,7 @@ workflows:
           context: vscode-packages
           requires:
             - test-coverage
-            - test-package
+            # - test-package
           filters:
             branches:
                 only: master
