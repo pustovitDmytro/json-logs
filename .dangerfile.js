@@ -1,18 +1,20 @@
-import { message, danger, warn, fail } from 'danger';
-import lint from '@commitlint/lint';
-import commitLintConfig from './.commitlintrc';
+/* eslint-disable import/no-commonjs */
+const {  lint  } = require('@commitlint/lint');
+const { message, danger, warn, fail } = require('danger');
+const {  commitLintConfig  } = require('./.commitlintrc');
+
 
 const src = danger.git.fileMatch('src/*');
 const tests = danger.git.fileMatch('tests/*');
 const system = danger.git.fileMatch('.*', '.*/**', 'LICENSE.md', 'package-lock.json', 'package.json');
 const isOwner = danger.github.pr.user.login === danger.github.thisPR.owner;
 const renovateBot = 29139614;
-const TrustedBots = [ renovateBot ];
+const trustedBots = [ renovateBot ];
 // const isBot = danger.github.pr.user.type === 'Bot';
-const isTrustedBot = TrustedBots.includes(danger.github.pr.user.id);
+const isTrustedBot = trustedBots.includes(danger.github.pr.user.id);
 const modifiedList = danger.git.modified_files.join('\n\n- ');
 
-export default async function () {
+module.exports = async function () {
     message(`Changed Files in this PR:\n\n- ${modifiedList}`);
 
     const { data: contributors } = await danger.github.api.repos.listContributors(danger.github.thisPR);
@@ -45,4 +47,4 @@ export default async function () {
     });
 
     await Promise.all(promises);
-}
+};
