@@ -59,5 +59,5 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [appveyor-badge]: https://ci.appveyor.com/api/projects/status/lik73h3vxd7687pr/branch/master?svg=true
 [appveyor-url]: https://ci.appveyor.com/project/pustovitDmytro/json-logs/branch/master
 
-[fossa-badge]: https://app.fossa.com/api/projects/custom%2B24828%2Fjson-logs.svg?type=shield
+[fossa-badge]: https://app.fossa.com/api/projects/custom%2B24828%2Fjson-logs?type=shield
 [fossa-url]: https://app.fossa.com/projects/custom%2B24828%2Fjson-logs?ref=badge_shield
