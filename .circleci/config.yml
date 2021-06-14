@@ -22,6 +22,16 @@ aliases:
     command: |
             echo "export DISPLAY=':99.0'" >> $BASH_ENV
             source $BASH_ENV
+  - &fossa-install
+    name: Install fossa
+    command: | 
+          curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | bash
+  - &fossa-analize
+    name: Send package to fossa
+    command: fossa analyze
+  - &fossa-test
+    name: Check fossa results
+    command: fossa test
   - &danger-pr
     name: Run danger
     command: npx danger ci -d .dangerfile.js
@@ -67,10 +77,12 @@ jobs:
   install:
     <<: *defaults
     steps:
+      - run: *fossa-install
       - checkout
       - run: *install
       - run: *security
       - run: *danger-pr
+      - run: *fossa-analize
       - save_cache: *cache-modules
   test-coverage:
     <<: *defaults
@@ -80,6 +92,19 @@ jobs:
           <<: *cache-defaults
       - run: *setup-vscode
       - run: *coverage
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: reports
+      - run: *coveralls
+  test-fossa:
+    <<: *defaults
+    steps:
+      - run: *fossa-install
+      - checkout
+      - restore_cache:
+          <<: *cache-defaults
+      - run: *fossa-test
   test-lint:
     <<: *defaults
     steps:
@@ -120,7 +145,7 @@ workflows:
   main:
     jobs:
       - install:
-          context: pr
+          context: branches
       # - test-package:
       #     requires:
       #       - install
@@ -131,6 +156,10 @@ workflows:
           requires:
             - install
       - test-coverage:
+          requires:
+            - install
+      - test-fossa:
+          context: branches
           requires:
             - install
       - deploy:

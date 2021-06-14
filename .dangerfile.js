@@ -21,7 +21,7 @@ module.exports = async function () {
     const contributor = contributors.find(c => c.login === danger.github.pr.user.login);
 
     if (contributor) {
-        message(`${contributor} login already contributed ${contributor.contributions} times`);
+        message(`${contributor.login} login already contributed ${contributor.contributions} times`);
     }
 
     if (system.modified && !isOwner) {

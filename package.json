@@ -42,7 +42,7 @@
 		"test-watch": "tsc -watch -p ./",
 		"pretest:unit": "npm run test-compile",
 		"test:lock": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm",
-		"test:lint": "eslint src tests --ext ts",
+		"test:lint": "eslint src tests --ext ts --no-error-on-unmatched-pattern",
 		"test:security": "npm audit && npm run test:lock",
 		"test:unit": "node ./out/tests/runTest.js",
 		"test:debt": "jscpd src --config .jscpd.json",
