@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/pustovitDmytro/json-logs/compare/v1.2.1...v1.2.2) (2021-06-14)
+
+
+### Docs
+
+* fixes fossa badge ([7ef3ab4](https://github.com/pustovitDmytro/json-logs/commit/7ef3ab44530047e442cf9dbc7a58ceb976da0bcf))
+
 ## [1.2.1](https://github.com/pustovitDmytro/json-logs/compare/v1.2.0...v1.2.1) (2021-06-14)
 
 
