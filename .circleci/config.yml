@@ -38,9 +38,9 @@ aliases:
   - &coveralls
     name: Upload to coveralls
     command: npm run coveralls
-  - &coverage
-    name: Test Coverage
-    command: npm run test:unit
+  - &e2e
+    name: Test e2e
+    command: npm run test:e2e
   - &lint
     name: JavaScript Linter
     command: npm run test:lint -- --format junit --output-file ./reports/test-results/eslint/eslint.xml
@@ -84,19 +84,14 @@ jobs:
       - run: *danger-pr
       - run: *fossa-analize
       - save_cache: *cache-modules
-  test-coverage:
+  test-e2e:
     <<: *defaults
     steps:
       - checkout
       - restore_cache:
           <<: *cache-defaults
       - run: *setup-vscode
-      - run: *coverage
-      - store_test_results:
-          path: reports
-      - store_artifacts:
-          path: reports
-      - run: *coveralls
+      - run: *e2e
   test-fossa:
     <<: *defaults
     steps:
@@ -146,16 +141,13 @@ workflows:
     jobs:
       - install:
           context: branches
-      # - test-package:
-      #     requires:
-      #       - install
       - test-lint:
           requires:
             - install
       - test-debt:
           requires:
             - install
-      - test-coverage:
+      - test-e2e:
           requires:
             - install
       - test-fossa:
@@ -165,8 +157,7 @@ workflows:
       - deploy:
           context: vscode-packages
           requires:
-            - test-coverage
-            # - test-package
+            - test-e2e
           filters:
             branches:
                 only: master
