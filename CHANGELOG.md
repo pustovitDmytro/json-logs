@@ -1,3 +1,50 @@
+## [1.2.1](https://github.com/pustovitDmytro/json-logs/compare/v1.2.0...v1.2.1) (2021-06-14)
+
+
+### chore
+
+* update dependency @types/node to v14 ([4413989](https://github.com/pustovitDmytro/json-logs/commit/441398971fdd82002181b19c714a483b3f42e8d8))
+* update dependency ts-loader to v9 ([cae5155](https://github.com/pustovitDmytro/json-logs/commit/cae5155c6d4665834805f817949ac608046c4f28))
+
+### Chore
+
+* 'Chore' semanticCommitType for updating devDependencies ([4bf79e1](https://github.com/pustovitDmytro/json-logs/commit/4bf79e1ac2907ca07a355f63458b8bf3b41a3afc))
+* (tests) clearCache on module load is optional ([96c2ae5](https://github.com/pustovitDmytro/json-logs/commit/96c2ae5237b7eed47278471cbf3b04b2b99385d4))
+* adds stabilityDays to renovate ([3b262bc](https://github.com/pustovitDmytro/json-logs/commit/3b262bcefc6db318d2a7d9103f9f5f42315202d5))
+* commonjs for danger ([8b88d8b](https://github.com/pustovitDmytro/json-logs/commit/8b88d8b3aa99b351be8be83ed1961fe2f824d234))
+* contributor login in danger message ([76349e6](https://github.com/pustovitDmytro/json-logs/commit/76349e6ee87b0e59f8fff9402eb10fa66d23a188))
+* dont store package-tests artifacts ([50ebff1](https://github.com/pustovitDmytro/json-logs/commit/50ebff16449ff34f474587136dca4e4740ed4bf7))
+* drop include from tsconfig ([c215b02](https://github.com/pustovitDmytro/json-logs/commit/c215b02565c5aa8e653115e8f4a1c26829b7da4a))
+* export default in tests ([9d210e6](https://github.com/pustovitDmytro/json-logs/commit/9d210e6f511a42a9c42f415ba6a64834346c11b0))
+* fix json in renovate ([8ad7928](https://github.com/pustovitDmytro/json-logs/commit/8ad792825b2703e3159b65faf722eb43a1d9d421))
+* fixes npm  audit ([c3beccd](https://github.com/pustovitDmytro/json-logs/commit/c3beccdf1926d72dcf9b13cd153e37916f1a8d13))
+* fixes tsc check ([1fd1957](https://github.com/pustovitDmytro/json-logs/commit/1fd19578df889cb31e8b044a3db68e604ecd2b2e))
+* include tests to tsc ([f500dc1](https://github.com/pustovitDmytro/json-logs/commit/f500dc13fb59a87426ff39f01bee0a3ccc2ada3b))
+* integrate APPVEYOR_BUILD_ID to build tests ([16cdd48](https://github.com/pustovitDmytro/json-logs/commit/16cdd48ddb7da5000c6df88ceb1f2513225a4a5b))
+* integrate fossa ([b65e961](https://github.com/pustovitDmytro/json-logs/commit/b65e961a5ae500b1b5fd12fce3436e71c1518e35))
+* integrate node-package-tester ([9d53bf3](https://github.com/pustovitDmytro/json-logs/commit/9d53bf30d295368e7f1e925c18b00e48cc16014e))
+* Lock file maintenance ([3291a21](https://github.com/pustovitDmytro/json-logs/commit/3291a2144ee143dc327f6fb4a8b82e62e07b1c1f))
+* Lock file maintenance ([cfc9a72](https://github.com/pustovitDmytro/json-logs/commit/cfc9a72453cc497b5734836a31edf1707e08a3d9))
+* removes unused devDependencies ([ddb100a](https://github.com/pustovitDmytro/json-logs/commit/ddb100aa634ab2e1d2695de73d9aeb4a7795ccce))
+* set YARGS_MIN_NODE_VERSION 10 ([9b6bef9](https://github.com/pustovitDmytro/json-logs/commit/9b6bef9d89f8f0c958ee1fe60f20475dd20c8276))
+* Update dependency eslint-plugin-unicorn to v33 ([bfa00ff](https://github.com/pustovitDmytro/json-logs/commit/bfa00ff354dfb9ffe717e9a36f7a938d44b32611))
+* Update dependency glob-parent to 5.1.2 [SECURITY] ([c957512](https://github.com/pustovitDmytro/json-logs/commit/c957512cf496d9b99e2278b44b6bb9da545f57a8))
+* Update dependency mocha to v9 ([c585a17](https://github.com/pustovitDmytro/json-logs/commit/c585a17c0220a40dd3abcb44b2cd4c9d2329f2b7))
+* Update dependency mocha to v9 ([93b7a17](https://github.com/pustovitDmytro/json-logs/commit/93b7a1783ea97a7bcd94d570ef33b61314c93746))
+* update eslint ([6b174b1](https://github.com/pustovitDmytro/json-logs/commit/6b174b184a792fc282ef3228079f23fa81f2bcb5))
+* update eslint-config-incredible ([2f39edb](https://github.com/pustovitDmytro/json-logs/commit/2f39edb6b44795918e8650be3e727b8e7abb61b7))
+* update eslint-config-incredible ([58c31d2](https://github.com/pustovitDmytro/json-logs/commit/58c31d295fa2df7cb3dceda8db6a417144a4b1c3))
+
+### Docs
+
+* adds node releases roadmap ([ba16142](https://github.com/pustovitDmytro/json-logs/commit/ba16142230db2895ecd9855d5746648075f0b8e8))
+* fix fossa name ([aa66879](https://github.com/pustovitDmytro/json-logs/commit/aa66879a63d12966f026b385b20b4a8646127207))
+* move Contributing Guidelines to separate file. ([081e4ed](https://github.com/pustovitDmytro/json-logs/commit/081e4ed03eebef0eda5305a1486a32cf91cdc62b))
+
+### Fix
+
+* set babel target node version to 10 ([f736568](https://github.com/pustovitDmytro/json-logs/commit/f73656838a20d11da6680579cfccc24a9f4a1201))
+
 # [1.2.0](https://github.com/pustovitDmytro/json-logs/compare/v1.1.0...v1.2.0) (2021-05-15)
 
 
