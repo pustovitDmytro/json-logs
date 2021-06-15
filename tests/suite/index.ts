@@ -1,6 +1,7 @@
-import * as path from 'path';
-import * as Mocha from 'mocha';
-import * as glob from 'glob';
+/* eslint-disable promise/prefer-await-to-callbacks */
+import path from 'path';
+import Mocha from 'mocha';
+import glob from 'glob';
 
 export function run(): Promise<void> {
     // Create the mocha test

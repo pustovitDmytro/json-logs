@@ -26,7 +26,9 @@ function parseJSONLine(line: string, index: number) {
 export function prettify() {
     const editor = vscode.window.activeTextEditor;
 
-    if (!editor) return console.error(MESSAGES.EDITOR_NOT_FOUND);
+    if (!editor) {
+        return console.error(MESSAGES.EDITOR_NOT_FOUND);
+    }
 
     const raw = editor.document.getText();
     const lines = raw.split(LINE_SEPERATOR);
