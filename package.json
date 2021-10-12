@@ -68,7 +68,7 @@
 		"conventional-changelog-eslint": "^3.0.9",
 		"coveralls": "^3.1.0",
 		"danger": "^10.6.4",
-		"eslint": "^7.28.0",
+		"eslint": "^8.0.0",
 		"eslint-config-incredible": "^2.3.1",
 		"eslint-plugin-censor": "^1.5.0",
 		"eslint-plugin-import": "^2.23.4",
