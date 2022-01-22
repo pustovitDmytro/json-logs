@@ -7,7 +7,16 @@ cache-defaults: &cache-defaults
     - -{{ checksum "package-lock.json" }}
 
 parameters:
-  env-tests:
+  skip-coveralls:
+    type: boolean
+    default: false
+  skip-security:
+    type: boolean
+    default: false
+  skip-leaks:
+    type: boolean
+    default: false
+  skip-deploy:
     type: boolean
     default: false
 
@@ -22,16 +31,6 @@ aliases:
     command: |
             echo "export DISPLAY=':99.0'" >> $BASH_ENV
             source $BASH_ENV
-  - &fossa-install
-    name: Install fossa
-    command: | 
-          curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | bash
-  - &fossa-analize
-    name: Send package to fossa
-    command: fossa analyze
-  - &fossa-test
-    name: Check fossa results
-    command: fossa test
   - &danger-pr
     name: Run danger
     command: npx danger ci -d .dangerfile.js
@@ -53,6 +52,9 @@ aliases:
   - &security
     name: Validate dependencies
     command: npm run test:security
+  - &security-all
+    name: Validate dev-dependencies
+    command: npm audit
   - &install
     name: Installing Dependencies
     command: npm ci
@@ -77,14 +79,24 @@ jobs:
   install:
     <<: *defaults
     steps:
-      - run: *fossa-install
       - checkout
       - run: *install
       - run: *security
       - run: *danger-pr
-      - run: *fossa-analize
       - save_cache: *cache-modules
-  test-e2e:
+  test-security:
+    <<: *defaults
+    steps:
+      - checkout
+      - when:
+          condition:
+            not: << pipeline.parameters.skip-security >>
+          steps:
+            - restore_cache:
+                <<: *cache-defaults
+            - run: *security
+            - run: *security-all
+    test-e2e:
     <<: *defaults
     steps:
       - checkout
@@ -92,14 +104,6 @@ jobs:
           <<: *cache-defaults
       - run: *setup-vscode
       - run: *e2e
-  test-fossa:
-    <<: *defaults
-    steps:
-      - run: *fossa-install
-      - checkout
-      - restore_cache:
-          <<: *cache-defaults
-      - run: *fossa-test
   test-lint:
     <<: *defaults
     steps:
@@ -109,6 +113,19 @@ jobs:
       - run: *lint
       - store_test_results:
           path: reports
+  test-leaks:
+    resource_class: small
+    docker:
+      - image: zricethezav/gitleaks:v7.6.1
+    steps:
+      - checkout
+      - when:
+          condition:
+            not: << pipeline.parameters.skip-leaks >>
+          steps:
+            - run:
+                name: Run gitleaks
+                command: "gitleaks -v --path . --config-path .gitleaks.toml"
   test-debt:
     <<: *defaults
     steps:
@@ -128,12 +145,16 @@ jobs:
   deploy:
     <<: *defaults
     steps:
-        - checkout
-        - restore_cache:
-            <<: *cache-defaults
-        - run:
-            name: Create Release
-            command: "[ -z ${CIRCLE_SKIP_DEPLOY+x} ] && npm run semantic-release || echo 'job skipped'"
+      - checkout
+      - when:
+          condition:
+            not: << pipeline.parameters.skip-deploy >>
+          steps:
+            - restore_cache:
+                <<: *cache-defaults
+            - run:
+                name: Create Release
+                command: if [ -z ${CIRCLE_SKIP_DEPLOY+x} ]; then npm run semantic-release;else echo 'job skipped';fi
 
 workflows:
   version: 2
@@ -141,6 +162,9 @@ workflows:
     jobs:
       - install:
           context: branches
+      - test-security:
+          requires:
+            - install
       - test-lint:
           requires:
             - install
@@ -150,8 +174,7 @@ workflows:
       - test-e2e:
           requires:
             - install
-      - test-fossa:
-          context: branches
+      - test-leaks:
           requires:
             - install
       - deploy:
@@ -167,7 +190,3 @@ workflows:
           filters:
             branches:
               only: /pull\/[0-9]+/
-  env-tests:
-    when: << pipeline.parameters.env-tests >>
-    jobs:
-      - install

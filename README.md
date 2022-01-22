@@ -56,8 +56,8 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [sonarcloud-badge]: https://sonarcloud.io/api/project_badges/measure?project=pustovitDmytro_json-logs&metric=alert_status
 [sonarcloud-url]: https://sonarcloud.io/dashboard?id=pustovitDmytro_json-logs
 
-[appveyor-badge]: https://ci.appveyor.com/api/projects/status/lik73h3vxd7687pr/branch/master?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/pustovitDmytro/json-logs/branch/master
+[node-ver-test-badge]: https://github.com/pustovitDmytro/json-logs/actions/workflows/npt.yml/badge.svg?branch=master
+[node-ver-test-url]: https://github.com/pustovitDmytro/json-logs/actions?query=workflow%3A%22Node.js+versions%22
 
 [fossa-badge]: https://app.fossa.io/api/projects/custom%2B24828%2Fjson-logs.svg?type=shield
 [fossa-url]: https://app.fossa.io/projects/custom%2B24828%2Fjson-logs?ref=badge_shield
