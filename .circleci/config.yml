@@ -84,6 +84,7 @@ jobs:
       - run: *security
       - run: *danger-pr
       - save_cache: *cache-modules
+  
   test-security:
     <<: *defaults
     steps:
@@ -96,7 +97,8 @@ jobs:
                 <<: *cache-defaults
             - run: *security
             - run: *security-all
-    test-e2e:
+  
+  test-e2e:
     <<: *defaults
     steps:
       - checkout
@@ -104,6 +106,7 @@ jobs:
           <<: *cache-defaults
       - run: *setup-vscode
       - run: *e2e
+  
   test-lint:
     <<: *defaults
     steps:
@@ -113,6 +116,7 @@ jobs:
       - run: *lint
       - store_test_results:
           path: reports
+  
   test-leaks:
     resource_class: small
     docker:
@@ -126,6 +130,7 @@ jobs:
             - run:
                 name: Run gitleaks
                 command: "gitleaks -v --path . --config-path .gitleaks.toml"
+  
   test-debt:
     <<: *defaults
     steps:
@@ -135,6 +140,7 @@ jobs:
       - run: *debt
       - store_artifacts:
           path: reports
+  
   test-package:
     <<: *defaults
     steps:
@@ -142,6 +148,7 @@ jobs:
       - restore_cache:
           <<: *cache-defaults
       - run: *test-package
+  
   deploy:
     <<: *defaults
     steps:
