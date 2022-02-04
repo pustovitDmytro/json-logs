@@ -44,7 +44,7 @@
 		"pretest:e2e": "npm run test-compile",
 		"test:lock": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm",
 		"test:lint": "eslint src tests --ext ts --no-error-on-unmatched-pattern",
-		"test:security": "npm audit && npm run test:lock",
+		"test:security": "npm audit --production && npm run test:lock",
 		"test:e2e": "node ./out/tests/runTest.js",
 		"test:debt": "jscpd src --config .jscpd.json",
 		"test": "npm run test:lint && npm run test:security && npm run test:e2e",
