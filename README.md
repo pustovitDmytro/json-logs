@@ -5,16 +5,18 @@ This extention will help you to prettify and manage json logs
 [![CodeFactor][codefactor-badge]][codefactor-url]
 [![SonarCloud][sonarcloud-badge]][sonarcloud-url]
 [![Codacy][codacy-badge]][codacy-url]
-[![Total alerts][lgtm-alerts-badge]][lgtm-alerts-url]
-[![Language grade][lgtm-lg-badge]][lgtm-lg-url]
 [![Scrutinizer][scrutinizer-badge]][scrutinizer-url]
 
 [![Build Status][tests-badge]][tests-url]
 [![Commit activity][commit-activity-badge]][github]
 [![FOSSA][fossa-badge]][fossa-url]
 [![License][badge-lic]][github]
+[![Made in Ukraine][ukr-badge]][ukr-link]
+
 
 ## Table of Contents
+- [json-logs](#json-logs)
+  - [Table of Contents](#table-of-contents)
   - [Usage](#usage)
   - [Contribute](#contribute)
 
@@ -47,9 +49,6 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [lgtm-lg-badge]: https://img.shields.io/lgtm/grade/javascript/g/pustovitDmytro/json-logs.svg?logo=lgtm&logoWidth=18
 [lgtm-lg-url]: https://lgtm.com/projects/g/pustovitDmytro/json-logs/context:javascript
 
-[lgtm-alerts-badge]: https://img.shields.io/lgtm/alerts/g/pustovitDmytro/json-logs.svg?logo=lgtm&logoWidth=18
-[lgtm-alerts-url]: https://lgtm.com/projects/g/pustovitDmytro/json-logs/alerts/
-
 [codacy-badge]: https://app.codacy.com/project/badge/Grade/8667aa23afaa4725854f098c4b5e8890
 [codacy-url]: https://www.codacy.com/gh/pustovitDmytro/json-logs/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pustovitDmytro/json-logs&amp;utm_campaign=Badge_Grade
 
@@ -61,3 +60,6 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 
 [fossa-badge]: https://app.fossa.io/api/projects/custom%2B24828%2Fjson-logs.svg?type=shield
 [fossa-url]: https://app.fossa.io/projects/custom%2B24828%2Fjson-logs?ref=badge_shield
+
+[ukr-badge]: https://img.shields.io/badge/made_in-ukraine-ffd700.svg?labelColor=0057b7
+[ukr-link]: https://war.ukraine.ua
