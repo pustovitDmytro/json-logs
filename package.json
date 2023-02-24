@@ -3,7 +3,7 @@
 	"displayName": "JSON Logs",
 	"description": "Manage json logs",
 	"icon": ".docs/logo_128.png",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"publisher": "dmytro-pustovit",
 	"engines": {
 		"vscode": "^1.55.0",
